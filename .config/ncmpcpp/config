@@ -1,0 +1,61 @@
+###############################################################################
+#                          PlanetRoast NCMPCPP Config                         #
+###############################################################################
+# Note that you'll need a recent version in order for this to work, the version
+# you get when you `apt install ncmpcpp` will probably be too old for this
+# config. You'll also need to enable 256 colors in your terminal (this is done
+# by adding a line in your .bashrc). For the whole config file check out the
+# project's github: https://github.com/ncmpcpp/ncmpcpp/blob/master/doc/config
+
+# Setup
+# -----------------------------------------------------------------------------
+mpd_music_dir = "/home/al/gs-music"
+mpd_host = "localhost"
+mpd_port = "7700"
+mpd_connection_timeout = "5"
+mpd_crossfade_time = "0"
+
+
+# Assorted options
+# -----------------------------------------------------------------------------
+auto-center = "yes" # Centers the current track in the playlist window
+colors_enabled = "yes" # Allows 256 colors if enabled in terminal
+titles_visibility = "no" # Artist, Album, Track etc
+#header_visibility = "no" # Only use is showing how long a playlist is
+
+
+# Common styles
+# -----------------------------------------------------------------------------
+main_window_color = 246
+now_playing_prefix = $(24_234)
+now_playing_suffix = $(end)
+selected_item_prefix = $(167)
+selected_item_suffix = $(end)
+#empty_tag_color = 246
+current_item_prefix = $(233_24)
+current_item_suffix = $(end)
+current_item_inactive_column_prefix = $(240)
+current_item_inactive_column_suffix = $(end)
+window_border_color = "246" # Popup window such as when adding items to playlist 
+
+
+# Header
+# -----------------------------------------------------------------------------
+state_line_color = "234" # Line at the top of the screen under 'Playlist' etc
+header_window_color = "240" # Playlist, Search Engine, Browse etc
+
+
+# Formats
+# -----------------------------------------------------------------------------
+song_columns_list_format = (30)[]{a} (30)[]{t|f:Title} (30)[]{b} (7f)[]{l}
+song_list_format = {%a - }{%t}|{$8%f$9}$R{$(246)%l$9}
+browser_sort_format = {%a - }{%t}|{%f} {%l}
+
+
+# Progress Bar & Status Bar
+# -----------------------------------------------------------------------------
+progressbar_color = 31
+progressbar_elapsed_color = 234
+progressbar_look = ■|
+statusbar_color = 240
+# player_state_color = "red" # Playing / Paused / Stopped etc
