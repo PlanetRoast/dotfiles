@@ -8,8 +8,6 @@ set timeoutlen=1000 ttimeoutlen=10
 set tw=80
 set incsearch " Jump to search word as you type
 set clipboard=unnamedplus " Sync system clipboard to yank register
-set ts=4 " tabs should be 4 spaces long
-set noet " use tabs instead of spaces
 set foldmethod=indent
 syntax enable
 
@@ -55,9 +53,19 @@ set wildignore+=**/node_modules/**
 :nnoremap Q <Nop>
 
 
-" Convert document with 2 spaces into tabs
+" Indentation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap ,tab :set ts=2 \| :set noet \| %retab! \| :set ts=4 \| :set sw=4 <CR>
+set ai " use autoindentation
+set si " use smart indentation
+set noet " use tabs instead of spaces
+set ts=4 " tabs should be 4 spaces long
+set sw=4 " autoindent width should be 4 spaces long
+
+" converts spaced documents into tabs
+noremap ,tab :set noet \| retab! 2 \| :set ts=4 sw=4 <CR>
+
+" converts tabbed documents into spaces
+noremap ,spa :set et ts=2 sw=2 \| retab <CR>
 
 
 " Markdown Helpers
